@@ -1,26 +1,19 @@
 {
-  "dependencies": {
-    "apollo-server-express": "^3.6.7",
-    "express": "^4.18.1",
-    "mongoose": "^6.3.2"
-  },
-  "name": "tabletop-group-finder",
-  "description": "",
+  "name": "mern-shopping",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WBrooks28/tabletop-group-finder.git"
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WBrooks28/tabletop-group-finder/issues"
-  },
-  "homepage": "https://github.com/WBrooks28/tabletop-group-finder#readme"
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
 }
