@@ -1,7 +1,7 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #232f3e;
+  --secondary: #f3a847;
+  --tertiary: #b12704;
   --light: #fafafa;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
@@ -11,17 +11,20 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 html,
 body {
   min-height: 100%;
+  /* width: 100%;
+  height: 100%; */
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -34,7 +37,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -91,7 +93,7 @@ button {
   font-size: 1rem;
   text-decoration: none;
   padding: 0.25rem 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -100,16 +102,17 @@ button {
 }
 
 button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 button[disabled] {
   cursor: default;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 img {
   max-width: 100%;
+  max-height: 100%;
 }
 
 span[role="img"] {
@@ -131,15 +134,16 @@ input {
 
 input:focus {
   border: 1px solid var(--secondary);
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
-.container {
-  width: 85%;
+/* .container {
+  width: 100%;
+  height: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 .flex-row {
   display: flex;
@@ -202,6 +206,8 @@ input:focus {
 .error-text {
   color: var(--error);
 }
+
+/*Landing Page*/
 
 @media screen and (max-width: 768px) {
   .card {
