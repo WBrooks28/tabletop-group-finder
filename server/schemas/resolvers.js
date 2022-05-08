@@ -7,6 +7,9 @@ const resolvers = {
     games: async () => {
       return await Game.find();
     },
+    games: async (parent, { _id }) => {
+      return await Game.findById(_id);
+    },
 
     user: async (parent, args, context) => {
       if (context.user) {

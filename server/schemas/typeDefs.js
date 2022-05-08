@@ -24,6 +24,7 @@ const typeDefs = gql`
 
   type Query {
     games: [Game]
+    game(_id: ID!): Game
     user: User
   }
 
