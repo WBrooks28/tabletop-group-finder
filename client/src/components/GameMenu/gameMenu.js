@@ -1,10 +1,8 @@
-const db = require("./connection");
-const { User, Game } = require("../models");
+import React from "react";
+import Game from "../Game/game";
 
-db.once("open", async () => {
-  await Game.deleteMany();
-
-  const games = await Game.insertMany([
+const GameMenu = () => {
+  const games = [
     {
       name: "Star Wars",
       description:
@@ -61,43 +59,25 @@ db.once("open", async () => {
       playerLimit: 6,
       date: "May 12 2022",
     },
-    {
-      name: "Call of Duty",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 180,
-      playerLimit: 10,
-      date: "May 12 2022",
-    },
-    {
-      name: "FIFA",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 180,
-      playerLimit: 8,
-      date: "May 12 2022",
-    },
-  ]);
+  ];
 
-  console.log("games seeded");
+  return (
+    <div className="my-2">
+      <div className="flex-row">
+        {games.map((games) => (
+          <Game
+            key={games.id}
+            _id={games.id}
+            name={games.name}
+            description={games.description}
+            duration={games.duration}
+            playerLimit={games.playerLimit}
+            date={games.date}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-  await User.deleteMany();
-
-  await User.create({
-    firstName: "Pamela",
-    lastName: "Washington",
-    email: "pamela@testmail.com",
-    password: "password12345",
-  });
-
-  await User.create({
-    firstName: "Elijah",
-    lastName: "Holt",
-    email: "eholt@testmail.com",
-    password: "password12345",
-  });
-
-  console.log("users seeded");
-
-  process.exit();
-});
+export default GameMenu;

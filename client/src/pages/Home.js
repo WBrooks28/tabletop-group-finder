@@ -1,15 +1,12 @@
 import React from "react";
-import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
-import Cart from "../components/Cart";
+import Landing from "../components/Landing/landing";
+import GameMenu from "../components/GameMenu/gameMenu";
 
 const Home = () => {
   return (
-    <div className="container">
-      <CategoryMenu />
-      <ProductList />
-      <Cart />
-    </div>
+    // <div className="container">
+    <GameMenu />
+    // </div>
   );
 };
 
