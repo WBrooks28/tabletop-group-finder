@@ -64,10 +64,10 @@ const GameMenu = () => {
   return (
     <div className="my-2">
       <div className="flex-row">
-        {games.map((games) => (
+        {games.map((games, index) => (
           <Game
-            key={games.id}
-            _id={games.id}
+            key={index}
+            _id={index}
             name={games.name}
             description={games.description}
             duration={games.duration}
