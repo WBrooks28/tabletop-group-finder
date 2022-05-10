@@ -8,15 +8,13 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from "./pages/Home";
+import GamesDashboard from "./pages/GamesDashboard";
 import GameDetail from "./pages/GameDetail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
-import Success from "./pages/Success";
-import OrderHistory from "./pages/OrderHistory";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -37,6 +35,72 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const games = [
+  {
+    id: 1,
+    name: "Star Wars",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    duration: 90,
+    playerLimit: 6,
+    date: "May 8 2022",
+  },
+  {
+    id: 2,
+    name: "Red Dead II",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    duration: 90,
+    playerLimit: 8,
+    date: "May 9 2022",
+  },
+  {
+    id: 3,
+    name: "Modern Warfare",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    duration: 90,
+    playerLimit: 6,
+    date: "May 9 2022",
+  },
+  {
+    id: 4,
+    name: "Age of Empires",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    duration: 90,
+    playerLimit: 4,
+    date: "May 9 2022",
+  },
+  {
+    id: 5,
+    name: "D&D",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    duration: 120,
+    playerLimit: 4,
+    date: "May 10 2022",
+  },
+  {
+    id: 6,
+    name: "Forza",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    duration: 120,
+    playerLimit: 12,
+    date: "May 10 2022",
+  },
+  {
+    id: 7,
+    name: "Halo Infinite",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    duration: 120,
+    playerLimit: 6,
+    date: "May 12 2022",
+  },
+];
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -45,7 +109,7 @@ function App() {
           <StoreProvider>
             <Nav />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={GamesDashboard} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/games/:id" component={GameDetail} />

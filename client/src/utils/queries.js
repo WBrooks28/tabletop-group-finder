@@ -1,4 +1,30 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
+
+export const QUERY_GAME = gql`
+  query getGame($id: ID!) {
+    game(_id: $id) {
+      _id
+      name
+      description
+      duration
+      playerLimit
+      date
+    }
+  }
+`;
+
+export const QUERY_GAMES = gql`
+  {
+    games {
+      _id
+      name
+      description
+      duration
+      playerLimit
+      date
+    }
+  }
+`;
 
 export const QUERY_PRODUCTS = gql`
   query getProducts($category: ID) {

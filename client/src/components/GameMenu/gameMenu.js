@@ -1,80 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Game from "../Game/game";
+import { useQuery } from "@apollo/client";
+import { QUERY_GAMES } from "../../utils/queries";
 
 const GameMenu = () => {
-  const games = [
-    {
-      name: "Star Wars",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
-      playerLimit: 6,
-      date: "May 8 2022",
-    },
-    {
-      name: "Red Dead II",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
-      playerLimit: 8,
-      date: "May 9 2022",
-    },
-    {
-      name: "Modern Warfare",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
-      playerLimit: 6,
-      date: "May 9 2022",
-    },
-    {
-      name: "Age of Empires",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
-      playerLimit: 4,
-      date: "May 9 2022",
-    },
-    {
-      name: "D&D",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 120,
-      playerLimit: 4,
-      date: "May 10 2022",
-    },
-    {
-      name: "Forza",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 120,
-      playerLimit: 12,
-      date: "May 10 2022",
-    },
-    {
-      name: "Halo Infinite",
-      description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 120,
-      playerLimit: 6,
-      date: "May 12 2022",
-    },
-  ];
+  const { loading, data } = useQuery(QUERY_GAMES);
+  // console.log("data", data);
+
+  const [input, setInput] = useState("");
 
   return (
     <div className="my-2">
+      <div>
+        <h1>Search By Name:</h1>
+        <input
+          name="Search By Name"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        ></input>
+      </div>
       <div className="flex-row">
-        {games.map((games) => (
-          <Game
-            key={games.id}
-            _id={games.id}
-            name={games.name}
-            description={games.description}
-            duration={games.duration}
-            playerLimit={games.playerLimit}
-            date={games.date}
-          />
-        ))}
+        {data?.games
+          ?.filter((game) =>
+            game.name.toLowerCase().includes(input.toLowerCase())
+          )
+          .map((game) => (
+            <Game
+              key={game._id}
+              _id={game._id}
+              name={game.name}
+              description={game.description}
+              duration={game.duration}
+              playerLimit={game.playerLimit}
+              date={game.date}
+            />
+          ))}
       </div>
     </div>
   );

@@ -7,8 +7,8 @@ const resolvers = {
     games: async () => {
       return await Game.find();
     },
-    games: async (parent, { _id }) => {
-      return await Game.findById(_id);
+    game: async (parent, args) => {
+      return await Game.findById(args._id);
     },
 
     user: async (parent, args, context) => {
@@ -22,6 +22,18 @@ const resolvers = {
     },
   },
   Mutation: {
+    // add new game
+    addGame: async (parent, args, context) => {
+      if (context.user) {
+        const game = await Game.create({
+          ...args,
+          userName: context.user.userName,
+        });
+        return game;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
+
     // add user
     addUser: async (parent, args) => {
       const user = await User.create(args);
