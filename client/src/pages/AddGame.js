@@ -1,3 +1,7 @@
+
+import React, { useEffect, useState } from "react";
+import Game from "../components/Game/game";
+
 import React from "react";
 
 function AddGame() {
@@ -48,3 +52,4 @@ function AddGame() {
 }
 
 export default AddGame;
+

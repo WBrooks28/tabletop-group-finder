@@ -11,26 +11,32 @@ const Title = styled.p`
 
 const Game = (game) => {
   const { _id, name, description, duration, date, playerLimit } = game;
-
+  console.log("Game", game);
   return (
     <div className="card px-1 py-1">
-      <img src={hero} className="card-img-top" alt="'"></img>
       <div className="card-body">
         <Link to={`/games/${_id}`}>
+          <img src={hero} className="card-img-top" alt="'"></img>
           <Title>{name}</Title>
         </Link>
         <div>
           <div>{description}</div>
           <div>
-            <BsPerson size={"16px"} />
+            <span>
+              <BsPerson size={"16px"} />
+            </span>
             {playerLimit} player limit
           </div>
           <div>
-            <BsClock size={"16px"} />
+            <span>
+              <BsClock size={"16px"} />
+            </span>
             {duration} minutes
           </div>
           <div>
-            <BsCalendar3 size={"16px"} />
+            <span>
+              <BsCalendar3 size={"16px"} />
+            </span>
             {date}
           </div>
         </div>

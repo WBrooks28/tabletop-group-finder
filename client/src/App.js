@@ -8,7 +8,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from "./pages/Home";
+import GamesDashboard from "./pages/GamesDashboard";
 import GameDetail from "./pages/GameDetail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
@@ -17,8 +17,6 @@ import AddGame from "./pages/AddGame";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import { StoreProvider } from "./utils/GlobalState";
-import Success from "./pages/Success";
-import OrderHistory from "./pages/OrderHistory";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,7 +45,7 @@ function App() {
           <StoreProvider>
             <Nav />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={GamesDashboard} />
               <Route exact path="/add-game" component={AddGame} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
