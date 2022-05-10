@@ -16,9 +16,7 @@
 
 html,
 body {
-  min-height: 100%;
-  /* width: 100%;
-  height: 100%; */
+  height: 100vh;
 }
 
 body {
@@ -29,6 +27,10 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+  background-image: url(./assets/dnd2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
 }
 
 h1,
@@ -48,6 +50,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  color: white;
 }
 
 h3 {
@@ -121,7 +124,9 @@ span[role="img"] {
 
 form {
   width: 40%;
+  color: white;
 }
+
 
 input {
   font-size: 1rem;
