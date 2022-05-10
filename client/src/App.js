@@ -13,6 +13,7 @@ import GameDetail from "./pages/GameDetail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import AddGame from "./pages/AddGame";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import { StoreProvider } from "./utils/GlobalState";
@@ -47,6 +48,7 @@ function App() {
             <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/add-game" component={AddGame} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/games/:id" component={GameDetail} />
