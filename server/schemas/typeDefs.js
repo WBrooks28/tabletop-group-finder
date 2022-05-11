@@ -8,6 +8,7 @@ const typeDefs = gql`
     duration: String
     playerLimit: String
     date: String
+    system: String
   }
 
   type User {

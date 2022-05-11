@@ -23,7 +23,7 @@ const GameMenu = () => {
         <Search>Search By Title</Search>
         <input value={input} onChange={(e) => setInput(e.target.value)}></input>
 
-        <Search>Search By Category</Search>
+        <Search>Search By System</Search>
         <input value={input} onChange={(e) => setInput(e.target.value)}></input>
       </div>
 
@@ -41,6 +41,7 @@ const GameMenu = () => {
               duration={game.duration}
               playerLimit={game.playerLimit}
               date={game.date}
+              system={game.system}
             />
           ))}
       </div>
