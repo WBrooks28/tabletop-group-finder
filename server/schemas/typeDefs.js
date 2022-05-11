@@ -34,8 +34,9 @@ const typeDefs = gql`
       name: String!
       description: String!
       duration: String!
-      playerLimit: String
-      date: String
+      playerLimit: String!
+      date: String!
+      system: String!
     ): Game
 
     addUser(

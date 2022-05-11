@@ -13,7 +13,8 @@ function Nav() {
               to="/add-game"
               style={{
                 textDecoration: "none",
-                fontSize: 16,
+                color: "white",
+                margin: 26,
               }}
             >
               AddGame
@@ -24,7 +25,8 @@ function Nav() {
               href="/"
               style={{
                 textDecoration: "none",
-                fontSize: 16,
+                color: "white",
+                margin: 26,
               }}
               onClick={() => Auth.logout()}
             >
