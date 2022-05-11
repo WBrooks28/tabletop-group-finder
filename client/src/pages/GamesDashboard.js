@@ -4,9 +4,9 @@ import GameMenu from "../components/GameMenu/gameMenu";
 
 const Home = () => {
   return (
-    // <div className="container">
-    <GameMenu />
-    // </div>
+    <div className="container-fluid">
+      <GameMenu />
+    </div>
   );
 };
 
