@@ -12,12 +12,8 @@ const GameMenu = () => {
   return (
     <div className="my-2">
       <div>
-        <h1>Search By Name:</h1>
-        <input
-          name="Search By Name"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        ></input>
+        <h4>Search By Title:</h4>
+        <input value={input} onChange={(e) => setInput(e.target.value)}></input>
       </div>
       <div className="flex-row">
         {data?.games
