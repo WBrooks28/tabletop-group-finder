@@ -46,7 +46,8 @@ const GameDetail = (props) => {
 
   const { loading, data } = useQuery(QUERY_GAME, { variables: { id } });
   console.log("data", data);
-
+  const [count, setCount] = useState(100);
+  console.log("count", count);
   return (
     <div className="container-fluid">
       <Link
@@ -72,14 +73,14 @@ const GameDetail = (props) => {
             <Icons>
               <BsPerson size={"20px"} />{" "}
             </Icons>
-            {data?.game?.playerLimit}
-            {" Players"}
+            {data?.game?.playerLimit > count ? count : data?.game?.playerLimit}
+            {" Seats Left"}
             <br />
             <Icons>
               <BsClock size={"20px"} />{" "}
             </Icons>
             {data?.game?.duration}
-            {" Minutes"}
+            {" Hours"}
             <br />
             <Icons>
               <BsCalendar3 size={"20px"} />{" "}
@@ -95,8 +96,22 @@ const GameDetail = (props) => {
             <Details>{data?.game?.description}</Details>
           </div>
           <div className="col-4 text-center">
-            <Seats>Seats Remaining!</Seats>
-            <button onClick={() => alert("Seat Booked!")}>Book Seat</button>
+            <Seats>
+              {data?.game?.playerLimit > count
+                ? count
+                : data?.game?.playerLimit}{" "}
+              Seats Remaining!
+            </Seats>
+            <button
+              data-count={data?.game?.playerLimit}
+              onClick={(e) => {
+                setCount(e.target.dataset.count - 1);
+                e.target.dataset.count = e.target.dataset.count - 1;
+                alert("Seat Booked!");
+              }}
+            >
+              Book Seat
+            </button>
           </div>
         </div>
       </div>

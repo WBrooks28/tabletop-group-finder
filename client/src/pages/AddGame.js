@@ -1,72 +1,77 @@
 import React, { useState } from "react";
-import { useMutation } from '@apollo/client';
-import { ADD_GAME } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_GAME } from "../utils/mutations";
 
 function AddGame() {
-    
-    const [gameName, setName] = useState('');
-    const [gameDescription, setDescription] = useState('');
-    const [gameDuration, setDuration] = useState('');
-    const [gamePlayerLimit, setPlayerLimit] = useState('');
-    const [gameDate, setDate] = useState('');
-    const [gameSystem, setSystem] = useState('');
-    const [addGame, { error }] = useMutation(ADD_GAME);
+  const [gameName, setName] = useState("");
+  const [gameDescription, setDescription] = useState("");
+  const [gameDuration, setDuration] = useState("");
+  const [gamePlayerLimit, setPlayerLimit] = useState("");
+  const [gameDate, setDate] = useState("");
+  const [gameSystem, setSystem] = useState("");
+  const [addGame, { error }] = useMutation(ADD_GAME);
 
-    const handleNameChange = (event) => {
-        setName(event.target.value);
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+
+  const handleDurationChange = (event) => {
+    setDuration(event.target.value);
+  };
+
+  const handlePlayerLimitChange = (event) => {
+    setPlayerLimit(event.target.value);
+  };
+
+  const handleDateChange = (event) => {
+    setDate(event.target.value);
+  };
+
+  const handleSystemChange = (event) => {
+    setSystem(event.target.value);
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(
+      "GAME STUFF!!!!!",
+      gameName,
+      gameDescription,
+      gameSystem,
+      gameDuration,
+      gamePlayerLimit,
+      gameDate
+    );
+    try {
+      await addGame({
+        variables: {
+          name: gameName,
+          description: gameDescription,
+          duration: gameDuration,
+          playerLimit: gamePlayerLimit,
+          date: gameDate,
+          system: gameSystem,
+        },
+      });
+
+      // TODO: clear form values
+      setName("");
+      setDescription("");
+      setDuration("");
+      setPlayerLimit("");
+      setDate("");
+      setSystem("");
+    } catch (err) {
+      console.error(err);
     }
+  };
 
-    const handleDescriptionChange = (event) => {
-        setDescription(event.target.value);
-    }
-
-    const handleDurationChange = (event) => {
-        setDuration(event.target.value);
-    }
-
-    const handlePlayerLimitChange = (event) => {
-        setPlayerLimit(event.target.value);
-    }
-
-    const handleDateChange = (event) => {
-        setDate(event.target.value);
-    }
-
-    const handleSystemChange = (event) => {
-        setSystem(event.target.value);
-    }
-
-
-    // submit form
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-
-        try {
-            await addGame ({
-                variables: { 
-                    gameName,
-                    gameDescription,
-                    gameDuration,
-                    gamePlayerLimit,
-                    gameDate,
-                    gameSystem
-                }
-            });
-            console.log('GAME STUFF!!!!!',gameName, gameDescription, gameSystem);
-            // TODO: clear form values
-            setName('');
-            setDescription('');
-            setDuration('');
-            setPlayerLimit('');
-            setDate('');
-            setSystem('');
-
-        } catch (err) {
-            console.error(err);
-        }
-    };
-  
-    return (
+  return (
     <div className="container-fluid form-container">
       <form className="m-3" onSubmit={handleFormSubmit}>
         <div className="form-group m-1">

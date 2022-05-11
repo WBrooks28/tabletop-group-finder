@@ -12,7 +12,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 3,
       playerLimit: 6,
-      date: "May 28 2022",
+      date: "2022-05-28",
     },
     {
       name: "Storm King's Thunder",
@@ -21,7 +21,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 5,
       playerLimit: 8,
-      date: "May 29 2022",
+      date: "2022-05-29",
     },
     {
       name: "Candlekeep Mysteries",
@@ -30,7 +30,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 4,
       playerLimit: 6,
-      date: "May 19 2022",
+      date: "2022-05-19",
     },
     {
       name: "Lair of the Gobbler",
@@ -39,7 +39,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 4,
       playerLimit: 4,
-      date: "May 19 2022",
+      date: "2022-05-19",
     },
     {
       name: "Crown of the Kobold King",
@@ -48,7 +48,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 3,
       playerLimit: 4,
-      date: "May 15 2022",
+      date: "2022-05-15 ",
     },
     {
       name: "Medusa in the Sleeping Garden",
@@ -57,7 +57,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 6,
       playerLimit: 12,
-      date: "May 18 2022",
+      date: "2022-05-18",
     },
     {
       name: "Slow Sleigh to Plankton Downs",
@@ -66,7 +66,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 2,
       playerLimit: 6,
-      date: "May 22 2022",
+      date: "2022-05-22",
     },
     {
       name: "The Children of Fear",
@@ -75,7 +75,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 3,
       playerLimit: 10,
-      date: "May 23 2022",
+      date: "2022-05-23",
     },
     {
       name: "Junkers Delight",
@@ -84,7 +84,7 @@ db.once("open", async () => {
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 4,
       playerLimit: 8,
-      date: "May 25 2022",
+      date: "2022-05-25",
     },
   ]);
 
