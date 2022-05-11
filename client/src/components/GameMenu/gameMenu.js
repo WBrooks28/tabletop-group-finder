@@ -16,6 +16,7 @@ const GameMenu = () => {
   // console.log("data", data);
 
   const [input, setInput] = useState("");
+  const [system, setSystem] = useState("");
 
   return (
     <div className="container-fluid">
@@ -24,13 +25,19 @@ const GameMenu = () => {
         <input value={input} onChange={(e) => setInput(e.target.value)}></input>
 
         <Search>Search By System</Search>
-        <input value={input} onChange={(e) => setInput(e.target.value)}></input>
+        <input
+          value={system}
+          onChange={(e) => setSystem(e.target.value)}
+        ></input>
       </div>
 
       <div className="flex-row">
         {data?.games
-          ?.filter((game) =>
-            game.name.toLowerCase().includes(input.toLowerCase())
+          ?.filter(
+            (game) =>
+              // (system ? game.system === system : true) &&
+              game.name.toLowerCase().includes(input.toLowerCase()) &&
+              game.system.toLowerCase().includes(system.toLowerCase())
           )
           .map((game) => (
             <Game
