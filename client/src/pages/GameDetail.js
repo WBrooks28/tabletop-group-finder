@@ -60,7 +60,7 @@ const GameDetail = (props) => {
       >
         ← Back to Games
       </Link>
-      <div>
+      <div className="container">
         <div className="game-info">
           <Title>{data?.game?.name}</Title>
           <Filters>
@@ -79,13 +79,16 @@ const GameDetail = (props) => {
               <BsClock size={"20px"} />{" "}
             </Icons>
             {data?.game?.duration}
-            {" Minutes"}
+            {" Hours"}
             <br />
             <Icons>
               <BsCalendar3 size={"20px"} />{" "}
             </Icons>
             {data?.game?.date}
           </Filters>
+          <div className="host-div">
+            <h1>Host Div</h1>
+          </div>
         </div>
       </div>
       <div className="container">

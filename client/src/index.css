@@ -261,6 +261,10 @@ input:focus {
   margin-bottom: 16px;
 }
 
+.host-div {
+  background-color: #05064e;
+}
+
 /*Search*/
 .search {
   background-color: var(--secondary);
