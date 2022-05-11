@@ -1,40 +1,29 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const QUERY_PRODUCTS = gql`
-  query getProducts($category: ID) {
-    products(category: $category) {
+export const QUERY_GAME = gql`
+  query getGame($id: ID!) {
+    game(_id: $id) {
       _id
       name
       description
-      price
-      quantity
-      image
-      category {
-        _id
-      }
+      duration
+      playerLimit
+      date
+      system
     }
   }
 `;
 
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
-    }
-  }
-`;
-
-export const QUERY_ALL_PRODUCTS = gql`
+export const QUERY_GAMES = gql`
   {
-    products {
+    games {
       _id
       name
       description
-      price
-      quantity
-      category {
-        name
-      }
+      duration
+      playerLimit
+      date
+      system
     }
   }
 `;

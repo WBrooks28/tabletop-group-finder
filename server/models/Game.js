@@ -30,6 +30,10 @@ const gameSchema = new Schema({
     min: "2022-05-11",
     max: "2022-08-11",
   },
+  system: {
+    type: String,
+    required: true,
+  },
 });
 
 const Game = mongoose.model("Game", gameSchema);

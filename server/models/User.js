@@ -6,23 +6,24 @@ const bcrypt = require("bcrypt");
 const userSchema = new Schema({
   firstName: {
     type: String,
-    required: true,
+    required: [true, "First name is required"],
     trim: true,
   },
   lastName: {
     type: String,
-    required: true,
+    required: [true, "Last name is required"],
     trim: true,
   },
   email: {
     type: String,
     required: true,
     unique: true,
+    match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: {
     type: String,
     required: true,
-    minlength: 6,
+    minLength: [6, "Password must be at least 6 characters!"],
   },
 });
 
