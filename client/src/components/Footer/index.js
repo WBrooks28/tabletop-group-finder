@@ -4,7 +4,7 @@ export default function Footer() {
   const footer = "Footer";
   return (
     <>
-      <ul className="flex-row">
+      <ul className="flex-row fixed-bottom">
         <li className="mx-1">
           <span>
             &copy; 2022 Table-Top Game Finder; Tyler Davis, Cindy Dunham,
