@@ -11,6 +11,10 @@ const resolvers = {
       return await Game.findById(args._id);
     },
 
+    users: async () => {
+      return await Game.find();
+    },
+
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id);
