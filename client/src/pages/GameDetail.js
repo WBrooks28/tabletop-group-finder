@@ -5,6 +5,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { QUERY_GAME } from "../utils/queries";
 import styled from "styled-components";
 import { BsPerson, BsClock, BsCalendar3 } from "react-icons/bs";
+import { GrSystem } from "react-icons/gr";
 
 const Title = styled.h1`
   font-size: 52px;
@@ -18,6 +19,10 @@ const Filters = styled.div`
   color: var(--light);
   font-weight: bold;
   padding: 16px;
+`;
+
+const Icons = styled.span`
+  color: black;
 `;
 
 const Details = styled.p`
@@ -59,22 +64,26 @@ const GameDetail = (props) => {
         <div className="game-info">
           <Title>{data?.game?.name}</Title>
           <Filters>
-            <span>
+            <Icons>
+              <GrSystem size={"20px"} />{" "}
+            </Icons>
+            {data?.game?.system}
+            <br />
+            <Icons>
               <BsPerson size={"20px"} />{" "}
-            </span>
-
+            </Icons>
             {data?.game?.playerLimit}
             {" Players"}
             <br />
-            <span>
+            <Icons>
               <BsClock size={"20px"} />{" "}
-            </span>
+            </Icons>
             {data?.game?.duration}
             {" Minutes"}
             <br />
-            <span>
+            <Icons>
               <BsCalendar3 size={"20px"} />{" "}
-            </span>
+            </Icons>
             {data?.game?.date}
           </Filters>
         </div>
