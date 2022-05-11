@@ -31,3 +31,23 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_GAME = gql`
+  mutation addGame(
+    $name: String!
+    $description: String!
+    $duration: String!
+    $playerLimit: String!
+    $date: String!
+    $system: String!
+  ) {
+    addGame(
+      name: $name
+      description: $description
+      duration: $duration
+      playerLimit: $playerLimit
+      date: $date
+      system: $system
+    )
+  }
+`

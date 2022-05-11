@@ -39,7 +39,7 @@ const Game = (game) => {
             <span>
               <BsClock size={"16px"} />{" "}
             </span>
-            {duration} minutes
+            {duration} hours
           </div>
           <div>
             <span>

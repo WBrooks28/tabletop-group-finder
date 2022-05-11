@@ -10,7 +10,7 @@ db.once("open", async () => {
       system: "Star Wars: Fantasy Flight Games",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
+      duration: 3,
       playerLimit: 6,
       date: "May 28 2022",
     },
@@ -19,7 +19,7 @@ db.once("open", async () => {
       system: "Dungeons & Dragons 5e",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
+      duration: 5,
       playerLimit: 8,
       date: "May 29 2022",
     },
@@ -28,7 +28,7 @@ db.once("open", async () => {
       system: "Dungeons & Dragons 5e",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
+      duration: 4,
       playerLimit: 6,
       date: "May 19 2022",
     },
@@ -37,7 +37,7 @@ db.once("open", async () => {
       system: "DURF",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 90,
+      duration: 4,
       playerLimit: 4,
       date: "May 19 2022",
     },
@@ -46,7 +46,7 @@ db.once("open", async () => {
       system: "Pathfinder",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 120,
+      duration: 3,
       playerLimit: 4,
       date: "May 15 2022",
     },
@@ -55,7 +55,7 @@ db.once("open", async () => {
       system: "Mork Borg",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 120,
+      duration: 6,
       playerLimit: 12,
       date: "May 18 2022",
     },
@@ -64,7 +64,7 @@ db.once("open", async () => {
       system: "Troika",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 120,
+      duration: 2,
       playerLimit: 6,
       date: "May 22 2022",
     },
@@ -73,7 +73,7 @@ db.once("open", async () => {
       system: "Call of Cthulhu",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 180,
+      duration: 3,
       playerLimit: 10,
       date: "May 23 2022",
     },
@@ -82,7 +82,7 @@ db.once("open", async () => {
       system: "Starfinder",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      duration: 180,
+      duration: 4,
       playerLimit: 8,
       date: "May 25 2022",
     },
