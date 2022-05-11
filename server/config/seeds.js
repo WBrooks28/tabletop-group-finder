@@ -6,76 +6,85 @@ db.once("open", async () => {
 
   const games = await Game.insertMany([
     {
-      name: "Star Wars",
+      name: "Edge of the Empire",
+      system: "Star Wars: Fantasy Flight Games",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 90,
       playerLimit: 6,
-      date: "May 8 2022",
+      date: "May 28 2022",
     },
     {
-      name: "Red Dead II",
+      name: "Storm King's Thunder",
+      system: "Dungeons & Dragons 5e",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 90,
       playerLimit: 8,
-      date: "May 9 2022",
+      date: "May 29 2022",
     },
     {
-      name: "Modern Warfare",
+      name: "Candlekeep Mysteries",
+      system: "Dungeons & Dragons 5e",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 90,
       playerLimit: 6,
-      date: "May 9 2022",
+      date: "May 19 2022",
     },
     {
-      name: "Age of Empires",
+      name: "Lair of the Gobbler",
+      system: "DURF",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 90,
       playerLimit: 4,
-      date: "May 9 2022",
+      date: "May 19 2022",
     },
     {
-      name: "D&D",
+      name: "Crown of the Kobold King",
+      system: "Pathfinder",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 120,
       playerLimit: 4,
-      date: "May 10 2022",
+      date: "May 15 2022",
     },
     {
-      name: "Forza",
+      name: "Medusa in the Sleeping Garden",
+      system: "Mork Borg",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 120,
       playerLimit: 12,
-      date: "May 10 2022",
+      date: "May 18 2022",
     },
     {
-      name: "Halo Infinite",
+      name: "Slow Sleigh to Plankton Downs",
+      system: "Troika",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 120,
       playerLimit: 6,
-      date: "May 12 2022",
+      date: "May 22 2022",
     },
     {
-      name: "Call of Duty",
+      name: "The Children of Fear",
+      system: "Call of Cthulhu",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 180,
       playerLimit: 10,
-      date: "May 12 2022",
+      date: "May 23 2022",
     },
     {
-      name: "FIFA",
+      name: "Junkers Delight",
+      system: "Starfinder",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       duration: 180,
       playerLimit: 8,
-      date: "May 12 2022",
+      date: "May 25 2022",
     },
   ]);
 
